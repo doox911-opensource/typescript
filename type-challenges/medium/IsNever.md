@@ -50,9 +50,30 @@ type cases = [
 Solution
 
 ```ts
-type IsNever<T> = [T] extends [never] ? true : false  
+type IsNever<T> = [T] extends [never] ? true : false
+
+// https://github.com/type-challenges/type-challenges/issues/1076
+type IsNever<T> = Equal<never, T>
 ```
 
 Description
 
 https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types
+
+Solutions(not mine)
+
+https://github.com/type-challenges/type-challenges/issues/5257
+```ts
+type IsNever<T> = {[ key: string ]: T} extends { [k: string]: never } ? true : false;
+```
+
+https://github.com/type-challenges/type-challenges/issues/1665
+```ts
+type IsNever<S> = S | true extends true ? true : false
+```
+
+https://github.com/type-challenges/type-challenges/issues/1411
+```ts
+type IsNever<T> = T[] extends never[] ? true : false;
+```
+
