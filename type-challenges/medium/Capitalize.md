@@ -74,3 +74,12 @@ type Capitalize<S extends string> = S extends `${infer FirstSymbol}${infer Other
   ? `${Uppercase<FirstSymbol>}${OtherSymbols}` 
   : S
 ```
+
+Solutions(not mine)
+
+https://github.com/type-challenges/type-challenges/issues/2669
+```ts
+type Capitalize<S extends string> = S extends `${infer L}${infer R}`
+  ? `${Uppercase<L>}${R}`
+  : ''
+```
