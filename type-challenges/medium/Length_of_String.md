@@ -37,7 +37,7 @@ type cases = [
 */
 ```
 
-Solution by Alexey Berezin
+Solution by [Alexey Berezin](https://github.com/Beraliv)
 
 ```ts
 type LengthOfString<
